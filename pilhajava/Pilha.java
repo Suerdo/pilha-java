@@ -10,14 +10,14 @@ public class Pilha {
     public Pilha(int tamanho) {
         tamanhoMaximo = tamanho;
         arrayDaPilha = new int[tamanhoMaximo];
-        topo = -1; // pilhaimplementada.Pilha vazia
+        topo = -1; // Pilha vazia
     }
 
     public void empilhar(int valor) {
         if (topo < tamanhoMaximo - 1) {
             arrayDaPilha[++topo] = valor;
         } else {
-            System.out.println("pilhaimplementada.Pilha cheia. Não é possível adicionar mais elementos.");
+            System.out.println("Pilha cheia. Não é possível adicionar mais elementos.");
         }
     }
 
@@ -25,7 +25,7 @@ public class Pilha {
         if (!estaVazia()) {
             return arrayDaPilha[topo--];
         } else {
-            System.out.println("pilhaimplementada.Pilha vazia. Não é possível remover elementos.");
+            System.out.println("Pilha vazia. Não é possível remover elementos.");
             return -1; // Valor de erro
         }
     }
@@ -34,7 +34,7 @@ public class Pilha {
         if (!estaVazia()) {
             return arrayDaPilha[topo];
         } else {
-            System.out.println("pilhaimplementada.Pilha vazia. Não há elementos para visualizar.");
+            System.out.println("Pilha vazia. Não há elementos para visualizar.");
             return -1; // Valor de erro
         }
     }
@@ -46,6 +46,11 @@ public class Pilha {
     public boolean estaCheia() {
         return (topo == tamanhoMaximo - 1);
     }
+    
+     public int tamanho() {
+        return topo + 1;
+    }
+    
     public void redimensionar(int novoTamanho) {
         if (novoTamanho > tamanhoMaximo) {
             tamanhoMaximo = novoTamanho;
@@ -62,7 +67,7 @@ public class Pilha {
                 System.out.println(arrayDaPilha[i]);
             }
         } else {
-            System.out.println("pilhaimplementada.Pilha vazia. Não há elementos para percorrer.");
+            System.out.println("Pilha vazia. Não há elementos para percorrer.");
         }
     }
 }
